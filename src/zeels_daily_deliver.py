@@ -130,7 +130,7 @@ def build_newspaper_epub(iso_date: str, briefs_dir: Path, *, run_epubcheck: bool
     return epub_path
 
 
-def _send(iso_date: str, epub_path: Path, marker_path: Path) -> int:
+def _send(iso_date: str, epub_path: Path, marker_path: Path, idempotency_key: str | None = None) -> int:
     env = load_env_keys(ENV_KEYS)
     missing = [k for k in ENV_KEYS if not env.get(k)]
     if missing:
@@ -138,7 +138,7 @@ def _send(iso_date: str, epub_path: Path, marker_path: Path) -> int:
 
     epub_bytes = epub_path.read_bytes()
     filename = f"zeels-daily-{iso_date}.epub"
-    idempotency_key = f"{IDEMPOTENCY_PREFIX}-{iso_date}"
+    key = idempotency_key or f"{IDEMPOTENCY_PREFIX}-{iso_date}"
 
     try:
         result = send_epub(
@@ -150,7 +150,7 @@ def _send(iso_date: str, epub_path: Path, marker_path: Path) -> int:
             filename=filename,
             content_bytes=epub_bytes,
             content_type=CONTENT_TYPE,
-            idempotency_key=idempotency_key,
+            idempotency_key=key,
         )
     except AgentMailClientError as exc:
         return _fail(f"AgentMail rejected the send (http {exc.status}); not retrying")
@@ -173,6 +173,11 @@ def main(argv: list[str] | None = None) -> int:
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument("--build-only", action="store_true", help="Build the EPUB only; do not send")
     mode.add_argument("--send", action="store_true", help="Build the EPUB and send it via AgentMail")
+    parser.add_argument(
+        "--idempotency-key",
+        default=None,
+        help="Override the default idempotency key (manual/demo sends only).",
+    )
     args = parser.parse_args(argv)
 
     iso_date = args.date
@@ -199,7 +204,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.build_only:
         return 0
 
-    return _send(iso_date, epub_path, marker_path)
+    return _send(iso_date, epub_path, marker_path, idempotency_key=args.idempotency_key)
 
 
 if __name__ == "__main__":

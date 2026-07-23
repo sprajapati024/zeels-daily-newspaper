@@ -5,7 +5,7 @@ dataclasses. Every required section named in the production spec is
 enforced here: metadata, cover_image, page_one (lead + index), briefing,
 research_desk (exactly two papers, each with a status, methods, result,
 limitation and at least one direct paper/PDF/DOI link), wildcard_desk,
-signals, for_shirin, from_hermys_desk, and source_ledger.
+signals, for_zeel, from_hermys_desk, and source_ledger.
 
 This module only validates structure and cross-references (e.g. every URL
 cited elsewhere in the issue must also appear in the source ledger). Text
@@ -323,19 +323,19 @@ def _parse_signals(data, path: str) -> Signals:
 
 
 @dataclass(frozen=True)
-class ForShirin:
+class ForZeel:
     headline: str
     paragraphs: tuple[str, ...]
     idea_worth_stealing: str | None = None
 
 
-def _parse_for_shirin(data, path: str) -> ForShirin:
+def _parse_for_zeel(data, path: str) -> ForZeel:
     d = _require_dict(data, path)
     headline = _require_str(_get(d, "headline", path), f"{path}.headline")
     paragraphs = _parse_paragraphs(_get(d, "paragraphs", path), f"{path}.paragraphs")
     idea_raw = d.get("idea_worth_stealing")
     idea = _require_str(idea_raw, f"{path}.idea_worth_stealing") if idea_raw is not None else None
-    return ForShirin(headline=headline, paragraphs=paragraphs, idea_worth_stealing=idea)
+    return ForZeel(headline=headline, paragraphs=paragraphs, idea_worth_stealing=idea)
 
 
 @dataclass(frozen=True)
@@ -361,7 +361,7 @@ class Issue:
     research_desk: ResearchDesk
     wildcard_desk: WildcardDesk
     signals: Signals
-    for_shirin: ForShirin
+    for_zeel: ForZeel
     from_hermys_desk: FromHermysDesk
     source_ledger: tuple[LinkRef, ...]
 
@@ -402,7 +402,7 @@ def parse_issue(data: dict) -> Issue:
     research_desk = _parse_research_desk(_get(root, "research_desk", "issue"), "issue.research_desk")
     wildcard_desk = _parse_wildcard_desk(_get(root, "wildcard_desk", "issue"), "issue.wildcard_desk")
     signals = _parse_signals(_get(root, "signals", "issue"), "issue.signals")
-    for_shirin = _parse_for_shirin(_get(root, "for_shirin", "issue"), "issue.for_shirin")
+    for_zeel = _parse_for_zeel(_get(root, "for_zeel", "issue"), "issue.for_zeel")
     from_hermys_desk = _parse_from_hermys_desk(_get(root, "from_hermys_desk", "issue"), "issue.from_hermys_desk")
 
     ledger_items = _require_list(_get(root, "source_ledger", "issue"), "issue.source_ledger", min_len=1)
@@ -431,7 +431,7 @@ def parse_issue(data: dict) -> Issue:
         research_desk=research_desk,
         wildcard_desk=wildcard_desk,
         signals=signals,
-        for_shirin=for_shirin,
+        for_zeel=for_zeel,
         from_hermys_desk=from_hermys_desk,
         source_ledger=source_ledger,
     )
