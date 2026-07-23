@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Shirin's Brief newspaper: build, validate and (optionally) deliver.
+"""Zeel's Daily newspaper: build, validate and (optionally) deliver.
 
 Reads `/var/www/briefs/<date>.newspaper.json` (schema enforced by
 `newspaper_schema.py`) plus the JPEG cover it names, builds a Kindle-safe
@@ -99,7 +99,7 @@ def _run_epubcheck(epub_path: Path) -> None:
 
 def build_newspaper_epub(iso_date: str, briefs_dir: Path, *, run_epubcheck: bool = True) -> Path:
     """Validate `<date>.newspaper.json` + its cover, build the EPUB, write
-    it atomically to `<date>.shirins-brief.epub`, and return that path.
+    it atomically to `<date>.zeels-daily.epub`, and return that path.
     """
     json_path = briefs_dir / f"{iso_date}{JSON_SUFFIX}"
     try:

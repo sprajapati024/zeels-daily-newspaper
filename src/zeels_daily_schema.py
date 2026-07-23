@@ -1,4 +1,4 @@
-"""JSON schema for a Shirin's Brief newspaper issue.
+"""JSON schema for a Zeel's Daily newspaper issue.
 
 Validates ``/var/www/briefs/<date>.newspaper.json`` into a tree of frozen
 dataclasses. Every required section named in the production spec is
@@ -121,7 +121,7 @@ def _parse_metadata(data, path: str) -> Metadata:
     date = _require_str(_get(d, "date", path), f"{path}.date")
     if not DATE_RE.match(date):
         raise NewspaperSchemaError(f"{path}.date", f"must be YYYY-MM-DD, got {date!r}")
-    title = _require_str(d.get("title", "Shirin’s Brief"), f"{path}.title")
+    title = _require_str(d.get("title", "Zeel’s Daily"), f"{path}.title")
     edition_label = _require_str(_get(d, "edition_label", path), f"{path}.edition_label")
     day_of_week_label = _require_str(_get(d, "day_of_week_label", path), f"{path}.day_of_week_label")
     volume = _require_str(_get(d, "volume", path), f"{path}.volume")

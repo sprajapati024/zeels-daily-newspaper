@@ -122,7 +122,7 @@ def render_signals(issue: Issue) -> str:
 def render_for_zeel(issue: Issue) -> str:
     fs = issue.for_zeel
     fh = issue.from_hermys_desk
-    parts = ["<h1>For Shirin</h1>", f"<h2>{render_inline(fs.headline)}</h2>"]
+    parts = ["<h1>For Zeel</h1>", f"<h2>{render_inline(fs.headline)}</h2>"]
     parts += [f"<p>{render_inline(para)}</p>" for para in fs.paragraphs]
     if fs.idea_worth_stealing:
         parts.append(f'<p class="take"><b>Idea worth stealing:</b> {render_inline(fs.idea_worth_stealing)}</p>')
@@ -152,6 +152,6 @@ def render_chapters(issue: Issue) -> list[tuple[str, str, str]]:
         ("The Research Desk", "research.xhtml", render_research_desk(issue)),
         (issue.wildcard_desk.desk_name, "wildcard.xhtml", render_wildcard_desk(issue)),
         ("Signals", "signals.xhtml", render_signals(issue)),
-        ("For Shirin", "for-shirin.xhtml", render_for_zeel(issue)),
+        ("For Zeel", "for-zeel.xhtml", render_for_zeel(issue)),
         ("Sources", "sources.xhtml", render_source_ledger(issue)),
     ]

@@ -2,7 +2,7 @@
 covers) and ``newspaper_epub_builder.py`` (which hard-fails on a bad one).
 
 "Kindle-safe grayscale" here means the same thing the approved prototype
-cover (`shirins-brief-cover-kindle.jpg`) is: a *baseline* JPEG, stored as
+cover (`zeels-daily-cover-kindle.jpg`) is: a *baseline* JPEG, stored as
 RGB (Kindle's cover pipeline is fussy about true single-channel JPEGs), but
 with every pixel's R, G and B channels equal -- i.e. visually grayscale.
 """

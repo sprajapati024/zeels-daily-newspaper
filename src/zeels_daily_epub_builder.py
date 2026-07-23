@@ -1,4 +1,4 @@
-"""Build the Shirin's Brief newspaper EPUB3 from a validated issue + cover.
+"""Build the Zeel's Daily newspaper EPUB3 from a validated issue + cover.
 
 Produces a minimal, valid EPUB3 (cover metadata, nav, NCX, spine, one
 stylesheet, one chapter per desk) entirely in memory, mirroring the
@@ -21,7 +21,7 @@ CSS_FILE_NAME = "style/newspaper.css"
 
 
 def _identifier(iso_date: str) -> str:
-    return f"urn:shirins-brief:{iso_date}"
+    return f"urn:zeels-daily:{iso_date}"
 
 
 def build_epub(issue: Issue, cover_bytes: bytes) -> bytes:
@@ -39,7 +39,7 @@ def build_epub(issue: Issue, cover_bytes: bytes) -> bytes:
     book.set_language(LANGUAGE)
     book.add_author(AUTHOR)
     book.add_metadata("DC", "date", md.date)
-    book.add_metadata("DC", "description", f"A private morning newspaper made for Shirin — {md.date}.")
+    book.add_metadata("DC", "description", f"A private morning design digest made for Zeel — {md.date}.")
 
     book.set_cover("cover.jpg", cover_bytes)
 

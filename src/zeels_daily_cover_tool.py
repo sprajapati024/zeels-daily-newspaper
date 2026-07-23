@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Zeel's Daily cover: monochrome abstract design elements over fresh MMX art.
 
-Same Kindle-safe constraints as the Shirin's Brief cover helper, but the
+Same Kindle-safe constraints as the Zeel's Daily cover helper, but the
 overlay is composed of beautiful abstract design elements rather than a
 traditional newspaper masthead. The resulting image is still converted to a
 600x800 grayscale baseline JPEG under 250KB so Amazon's Personal Document
 service ingests it without the PNG download stall we saw on the first
-Shirin's Brief prototype.
+prototype.
 """
 from __future__ import annotations
 
