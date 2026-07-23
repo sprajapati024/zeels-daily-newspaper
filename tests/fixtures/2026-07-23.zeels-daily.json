@@ -1,0 +1,183 @@
+{
+  "metadata": {
+    "date": "2026-07-23",
+    "title": "Zeel’s Daily",
+    "edition_label": "A private morning design-AI digest",
+    "day_of_week_label": "Thursday, July 23, 2026",
+    "volume": "Vol. I",
+    "edition": "Morning Edition"
+  },
+  "cover_image": "2026-07-23.zeels-daily.cover.jpg",
+  "page_one": {
+    "kicker": "The lead",
+    "headline": "Designers stopped designing the screen. They started designing the model.",
+    "deck": "The 2026 Figma and Adobe direction has shifted the discipline. The artifact is no longer the page; it is the prompt, the agent and the governed generation pipeline. Design leaders who still ship static screens are shipping a museum exhibit.",
+    "lead_paragraphs": [
+      "Figma’s Config 2026 lineup, Adobe’s MAX 2026 preview and the year’s pattern of design-hiring announcements tell the same story: the highest-paying design work is no longer drawing pixels. It is choosing what to constrain, what to delegate to a model and how to make every AI-generated variant reviewable.",
+      "The shift is uncomfortable because the most useful tool is now non-deterministic. Designers who spent a decade building muscle memory for exact pixel control are being asked to design the system that produces the pixels. That is closer to a music producer’s job than a poster designer’s job.",
+      "Figma is the most explicit about it. Its 2026 announcements frame Make, Sites and the new Code Connect pipeline as a single studio that turns intent into shipped UI without leaving the canvas. Adobe’s MAX preview positions Firefly Video 2 and the new design-aware Generative Workspace inside Creative Cloud. The messaging is uniform: the studio owns the entire pipeline, model included."
+    ],
+    "take": {
+      "label": "Hermy’s view",
+      "text": "Designers who treat AI as a faster pen are missing the leverage. The leverage is in designing the system that generates ten safe variants, shows you the trade-offs and refuses the unsafe one. That is closer to airline-pilot training than illustration. The work feels slower the first week and ten times faster by the third."
+    },
+    "source": {
+      "label": "READ FIGMA’S CONFIG 2026 ANNOUNCEMENTS",
+      "url": "https://www.figma.com/blog/config-2026-recap-everything-you-need-to-know/"
+    },
+    "index": [
+      {"label": "The Briefing", "text": "Figma, Adobe, Notion, Linear and Lovable all shipped the same message."},
+      {"label": "The Studio", "text": "two research pieces worth opening, with direct links."},
+      {"label": "The Thursday Desk", "text": "design systems and accessibility when AI generates the markup."},
+      {"label": "Signals", "text": "the number, the tool and the claim worth questioning."},
+      {"label": "For Zeel", "text": "what these moves mean for a working designer."}
+    ]
+  },
+  "briefing": {
+    "stories": [
+      {
+        "kicker": "Figma",
+        "headline": "Figma Make turns designers into studio directors",
+        "paragraphs": [
+          "Figma Make, the AI design-and-code surface launched at Config 2025 and extended throughout 2026, lets a designer describe an intent in natural language, generate a working prototype and ship to a deployed site without leaving the canvas. The 2026 updates added Sites (responsive production pages), Code Connect (governed mapping from design tokens to component code) and a collaboration mode where designers review AI variants the way art directors review comps.",
+          "For most teams the practical change is that prototypes now have a life of their own. A Make prototype can be branched, versioned, A/B tested against a live URL and merged into the production design system with explicit governance."
+        ],
+        "take": {
+          "label": "Hermy’s view",
+          "text": "Make is most useful as a forcing function for governance. If a designer can ship without leaving Figma, your design system had better be ready. Token drift, dead components and undocumented variants become visible the moment a model tries to consume them."
+        },
+        "source": {
+          "label": "FIGMA — CONFIG 2026 RECAP",
+          "url": "https://www.figma.com/blog/config-2026-recap-everything-you-need-to-know/"
+        }
+      },
+      {
+        "kicker": "Adobe",
+        "headline": "Adobe folds Firefly into a generative workspace",
+        "paragraphs": [
+          "Adobe’s MAX 2026 preview positioned Firefly Video 2, the new Photoshop generative fill mode and an integrated Generative Workspace inside Creative Cloud. The pitch is the same as Figma’s: the artifact is now a draft, and the studio owns the review, provenance and version history around it.",
+          "The interesting move is the licensing story. Adobe’s enterprise tier now ships with IP indemnification for outputs and a content-credentials ledger so every Firefly-derived asset can be audited back to its prompt and source asset. That is not a small thing; legal teams have been the biggest brake on enterprise adoption."
+        ],
+        "take": {
+          "label": "Hermy’s view",
+          "text": "Indemnification is what unblocks the Fortune 500. The creative team will pick tools partly on taste, but the procurement team will pick them on whether the legal department signs off. Adobe just turned that dial."
+        },
+        "source": {
+          "label": "ADOBE — FIREFLY VIDEO 2 ANNOUNCEMENT",
+          "url": "https://www.adobe.com/products/firefly-video.html"
+        }
+      },
+      {
+        "kicker": "Workflow",
+        "headline": "Linear and Notion are quietly eating the design ops stack",
+        "paragraphs": [
+          "The unglamorous end of design operations is where the most leverage lives. Linear’s 2026 release added design-issue routing, automated ticket triage and a review surface that ties Figma frames, Loom walkthroughs and shipped builds into a single status. Notion shipped Notion AI for Product, which summarises research, drafts RFCs and keeps a queryable index of past decisions.",
+          "Together the two products are replacing the half-dozen Notion + Jira + Loom + productboard subscriptions most design orgs were running. They are not design tools; they are the connective tissue around the design tools."
+        ],
+        "take": {
+          "label": "Hermy’s view",
+          "text": "If you are still running three trackers and two meeting tools to ship a feature, you are paying the design ops tax twice. Linear and Notion now cover the same ground for less context-switching, and they both integrate with Figma and the model layer."
+        },
+        "source": {
+          "label": "LINEAR — METHODS — DESIGN OPS 2026",
+          "url": "https://linear.app/methods/design-ops-2026"
+        }
+      }
+    ]
+  },
+  "research_desk": {
+    "intro": "Two research pieces worth opening, not merely hearing about.",
+    "papers": [
+      {
+        "field": "HCI",
+        "status": "peer-reviewed",
+        "title": "Co-Writing with AI: How Designers Use Generative Tools in Real Practice",
+        "byline": "ACM CHI 2026 · paper open-access via the ACM Digital Library",
+        "methods": "A multi-site study of 38 professional designers across product, brand and editorial teams. Participants kept a structured diary for six weeks while working on real briefs, with screen capture and prompt logs. Researchers coded 1,840 AI interactions and interviewed a subset of participants about prompt revisions and abandoned generations.",
+        "result": "Three stable patterns: (1) designers use AI as a divergent-thought partner in the first 20% of a brief and a polishing tool in the last 20%; (2) mid-project generations are the least useful because the model lacks project context; (3) the biggest productivity lift came from prompt chaining with versioned outputs, not from raw prompt quality. Designers who treated the model as a junior collaborator finished more variants; designers who treated it as a slot machine produced more visible work but less shipped work.",
+        "why_it_matters": "Most product copy about AI in design assumes a one-shot prompt yields a final asset. The actual pattern is conversational, with a divergence–convergence curve. Design tools should optimise for that curve, not for first-pass quality.",
+        "limitation": "Self-selected designers and short diary window. The pattern may not generalise to regulated domains (medical, financial) where prompt chains are audited differently.",
+        "links": [
+          {"label": "ACM DIGITAL LIBRARY ENTRY", "url": "https://dl.acm.org/doi/10.1145/3716567.3716580"},
+          {"label": "OPEN PDF", "url": "https://dl.acm.org/doi/pdf/10.1145/3716567.3716580"}
+        ]
+      },
+      {
+        "field": "GenUI",
+        "status": "peer-reviewed",
+        "title": "Generative UI at Scale: A Field Study of Component-Aware LLM Rendering in Production",
+        "byline": "UIST 2026 · open-access on the ACM Digital Library",
+        "methods": "A two-month field deployment inside a SaaS company where an LLM was allowed to compose the home dashboard from a governed component library. The team instrumented every generation with prompt, retrieved components, human edits, time-to-ship and post-launch usage telemetry. The paper compares three policies: free generation, library-constrained generation and library-constrained plus a guardrail pass.",
+        "result": "Library-constrained generation shipped 4.1x more variants into production than free generation, with no measurable drop in user satisfaction scores. The guardrail pass caught most brand-off-key variants but slowed generation by an average of 38 seconds. Designers reported that the most useful feature was the inspection view, not the AI itself: a side panel showing which components the model used, which tokens it relied on and which visual rules it violated.",
+        "why_it_matters": "GenUI hype assumes the model is the product. In real production work the model is the smallest piece; the component library, the inspection view and the guardrail pass are what made it ship. Teams that skip the library end up with beautiful one-off screens that nobody can maintain.",
+        "limitation": "One company, one product surface. The governance model depends on a mature design system; smaller teams without a component library will see weaker results.",
+        "links": [
+          {"label": "UIST 2026 PAPER", "url": "https://dl.acm.org/doi/10.1145/3746669.3746679"},
+          {"label": "OPEN PDF", "url": "https://dl.acm.org/doi/pdf/10.1145/3746669.3746679"}
+        ]
+      }
+    ]
+  },
+  "wildcard_desk": {
+    "desk_name": "The Thursday Desk",
+    "kicker": "Design systems",
+    "headline": "When AI generates the markup, your tokens are the only thing keeping you alive",
+    "paragraphs": [
+      "Design tokens were useful before AI. With AI in the loop, they are the unit of governance. The teams shipping the most production GenUI work are the ones with the strictest token taxonomies, the most aggressive dead-component retirement and the clearest documentation of which tokens are safe to expose to a model.",
+      "W3C Design Tokens Community Group published the v2 draft of the Design Tokens specification in June 2026. The biggest change is the explicit \"$extensions\" channel for governance metadata: per-token legal restrictions, AI-use permissions, brand-safety flags and deprecation windows. Tokens are no longer just values; they are contracts.",
+      "Accessibility is the second pressure point. When a model composes a layout from a component library, the contrast, focus order and motion-reduce rules have to be expressed as inputs to the model, not patched afterwards. The teams that win are encoding accessibility as first-class constraints on the model, not as a post-generation checklist."
+    ],
+    "take": {
+      "label": "Hermy’s view",
+      "text": "If your design system cannot explain itself to a model in three seconds, the model will improvise, and the result will not match your brand. Documentation for humans is good. Documentation a model can consume in one pass is the new minimum."
+    },
+    "sources": [
+      {"label": "W3C DESIGN TOKENS — V2 DRAFT", "url": "https://www.designtokens.org/tr/drafts/format/"},
+      {"label": "ACCESSIBLE AI DESIGN GUIDE — SMASHING", "url": "https://www.smashingmagazine.com/2026/06/accessible-ai-design-guide/"}
+    ]
+  },
+  "signals": {
+    "items": [
+      {
+        "label": "One number that matters",
+        "headline": "4.1x",
+        "body": "How many more dashboard variants shipped to production when the GenUI deployment used a constrained component library, compared with free generation. The lift came from governance, not from model quality."
+      },
+      {
+        "label": "One tool to watch",
+        "headline": "Lovable",
+        "body": "The text-to-product tool is closing the gap between designers and front-end engineers faster than Figma Make did a year ago. Watch whether it becomes a real co-design surface or stays a marketing-demo."
+      },
+      {
+        "label": "One claim to distrust",
+        "headline": "“AI replaces designers.”",
+        "body": "The field study evidence shows AI changes the role, not the count. The biggest productivity lift goes to designers who already had a strong system and used the model inside it."
+      }
+    ]
+  },
+  "for_shirin": {
+    "headline": "Why this matters outside a design studio",
+    "paragraphs": [
+      "Zeel, the same pattern shows up everywhere we look this week. The work that survives is the work that gets encoded into systems other people and models can use. A designer who owns a strong token system owns the AI-generated variants automatically; a designer who ships beautiful one-off screens owns the work but not the leverage.",
+      "The tools changed. The discipline of writing things down so the next person can build on them did not. That is the through-line worth keeping."
+    ],
+    "idea_worth_stealing": "treat every AI-generated variant as a draft that must be reviewed against the system it came from, never as a final asset in isolation."
+  },
+  "from_hermys_desk": {
+    "paragraphs": [
+      "The most useful design tool of 2026 is the document. Not the Figma file, not the prompt. The document that says which rules a model is allowed to break and which it is not. Teams that wrote that document six months ago are flying; teams that did not are still patching after every generation."
+    ],
+    "closing_note": "End of sample edition · tell Hermy what felt useful and what felt fluffy on the actual Kindle."
+  },
+  "source_ledger": [
+    {"label": "Figma — Config 2026 recap", "url": "https://www.figma.com/blog/config-2026-recap-everything-you-need-to-know/"},
+    {"label": "Adobe — Firefly Video 2", "url": "https://www.adobe.com/products/firefly-video.html"},
+    {"label": "Linear — Design ops 2026", "url": "https://linear.app/methods/design-ops-2026"},
+    {"label": "Co-writing with AI — ACM CHI 2026", "url": "https://dl.acm.org/doi/10.1145/3716567.3716580"},
+    {"label": "Co-writing with AI — open PDF", "url": "https://dl.acm.org/doi/pdf/10.1145/3716567.3716580"},
+    {"label": "Generative UI at Scale — UIST 2026", "url": "https://dl.acm.org/doi/10.1145/3746669.3746679"},
+    {"label": "Generative UI at Scale — open PDF", "url": "https://dl.acm.org/doi/pdf/10.1145/3746669.3746679"},
+    {"label": "W3C Design Tokens — v2 draft", "url": "https://www.designtokens.org/tr/drafts/format/"},
+    {"label": "Smashing — accessible AI design guide", "url": "https://www.smashingmagazine.com/2026/06/accessible-ai-design-guide/"}
+  ]
+}
